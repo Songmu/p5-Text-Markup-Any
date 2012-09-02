@@ -103,15 +103,25 @@ __END__
 
 =head1 NAME
 
-Text::Markup::Any -
+Text::Markup::Any - Common Lightweight Markup Language Interface
 
 =head1 SYNOPSIS
 
   use Text::Markup::Any;
 
+  # OO Interface
+  my $md = Text::Markup::Any->new('Text::Markdown');
+  my $html = $md->markup('# hoge'); # <h1>hoge</h1>
+
+  # Functional Interface
+  my $tx = markupper 'Textile'; # snip 'Text::' in functional inteface.
+  my $html = $tx->markup('h1. hoge'); # <h1>hoge</h1>
+
 =head1 DESCRIPTION
 
-Text::Markup::Any is
+Text::Markup::Any is Common Lightweight Markup Language Inteface.
+Currently suppoted modules are Text::Markdown, Text::MultiMarkdown,
+Text::Markdown::Discount, Text::Xatena and Text::Textile.
 
 =head1 AUTHOR
 
