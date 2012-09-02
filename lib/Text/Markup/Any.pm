@@ -9,7 +9,6 @@ use Class::Load qw/load_class/;
 
 our @EXPORT = qw/markupper/;
 
-
 my $markdown = {markup_method   => 'markdown'};
 our %MODULES = (
     'Text::Markdown'            => $markdown,

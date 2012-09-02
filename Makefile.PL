@@ -2,7 +2,9 @@ use inc::Module::Install;
 name 'Text-Markup-Any';
 all_from 'lib/Text/Markup/Any.pm';
 
-# requires '';
+requires 'Text::Markdown';
+requires 'parent';
+requires 'Class::Load';
 
 tests 't/*.t';
 author_tests 'xt';
