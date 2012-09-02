@@ -119,8 +119,8 @@ Text::Markup::Any - Common Lightweight Markup Language Interface
 
 =head1 DESCRIPTION
 
-Text::Markup::Any is Common Lightweight Markup Language Inteface.
-Currently suppoted modules are Text::Markdown, Text::MultiMarkdown,
+Text::Markup::Any is Common Lightweight Markup Language Interface.
+Currently supported modules are Text::Markdown, Text::MultiMarkdown,
 Text::Markdown::Discount, Text::Xatena and Text::Textile.
 
 =head1 AUTHOR
