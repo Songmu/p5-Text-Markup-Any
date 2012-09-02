@@ -17,15 +17,27 @@ our %MODULES = (
 );
 
 sub new {
-    my ($pkg, $class, %args) = @_;
+    my ($pkg, $class, @args) = @_;
+
+    my $args;
+    if (@args) {
+        $args = ref $args[0] ? $args[0] : {@args};
+    }
 
     my $info = $MODULES{$class}
         or die "no configuration found: $class. You want to use $class, directory call $pkg->adaptor constractor.";
 
-    $info->{args} = {
-        %{ $info->{args} },
-        %args,
-    } if %args;
+    if ($args) {
+        if ($info->{args} && ref($info->{args}) eq 'HASH') {
+            $info->{args} = {
+                %{ $info->{args} },
+                %$args,
+            };
+        }
+        else {
+            $info->{args} = $args;
+        }
+    }
 
     $pkg->adaptor(
         class   => $class,
