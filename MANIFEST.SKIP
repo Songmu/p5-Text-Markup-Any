@@ -21,4 +21,5 @@
 \.sw[po]$
 ^MYMETA\.
 \.gitignore
-\.README.pod
+README.pod
+^tmp/
