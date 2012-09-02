@@ -4,7 +4,11 @@ use warnings;
 use utf8;
 our $VERSION = '0.01';
 
+use parent 'Exporter';
 use Class::Load qw/load_class/;
+
+our @EXPORT = qw/markupper/;
+
 
 my $markdown = {markup_method   => 'markdown'};
 our %MODULES = (
@@ -87,6 +91,12 @@ sub markup {
     $self->{_instance}->$meth(@text);
 }
 
+sub markupper {
+    my $class = shift;
+    $class = "Text::$class" unless $class =~ /^\+/;
+
+    __PACKAGE__->new($class, @_);
+}
 
 
 1;
