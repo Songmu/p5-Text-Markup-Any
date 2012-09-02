@@ -6,14 +6,14 @@ our $VERSION = '0.01';
 
 use Class::Load qw/load_class/;
 
-my $markdown = {format_method   => 'markdown'};
+my $markdown = {markup_method   => 'markdown'};
 our %MODULES = (
     'Text::Markdown'            => $markdown,
     'Text::MultiMarkdown'       => $markdown,
     'Text::Markdown::Discount'  => $markdown,
     'Text::Markdown::GitHubAPI' => $markdown,
-    'Text::Xatena'              => {format_method => 'format'},
-    'Text::Textile'             => {format_method => 'process'},
+    'Text::Xatena'              => {markup_method => 'format'},
+    'Text::Textile'             => {markup_method => 'process'},
 );
 
 sub new {
@@ -50,7 +50,7 @@ sub adaptor {
     my ($pkg, %info) = @_;
 
     my $class         = $info{class} or die q{Required class parameter};
-    my $format_method = $info{format_method} or die q{Required format_method parameter};
+    my $markup_method = $info{markup_method} or die q{Required markup_method parameter};
     my $constructor   = $info{constructor} || 'new';
 
     load_class($class);
@@ -76,14 +76,14 @@ sub adaptor {
 
     bless {
         _instance      => $instance,
-        _format_method => $format_method,
+        _markup_method => $markup_method,
     }, $pkg;
 }
 
-sub format {
+sub markup {
     my ($self, @text) = @_;
 
-    my $meth = $self->{_format_method};
+    my $meth = $self->{_markup_method};
     $self->{_instance}->$meth(@text);
 }
 
