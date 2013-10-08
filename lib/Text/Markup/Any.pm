@@ -15,6 +15,12 @@ our %MODULES = (
     'Text::MultiMarkdown'       => $markdown,
     'Text::Markdown::Discount'  => $markdown,
     'Text::Markdown::GitHubAPI' => $markdown,
+    'Text::Markdown::Hoedown' => {
+        class         => 'Text::Markdown::Hoedown::Markdown',
+        markup_method => 'render',
+        args          => sub { [0, 16, Text::Markdown::Hoedown::Callbacks->html_renderer(0, 99)] },
+        deref         => 1,
+    },
     'Text::Xatena'              => {markup_method => 'format'},
     'Text::Textile'             => {markup_method => 'process'},
 );
@@ -42,6 +48,7 @@ sub new {
         }
     }
 
+    load_class($class) if $info->{class};
     $pkg->adaptor(
         class   => $class,
         %$info,
@@ -57,6 +64,7 @@ sub adaptor {
     my $constructor   = $info{constructor} || 'new';
 
     load_class($class);
+    $info{args} = $info{args}->() if ref $info{args} eq 'CODE';
 
     my $instance;
     if ($info{deref} and my $args = $info{args}) {
