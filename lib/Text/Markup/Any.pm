@@ -18,7 +18,7 @@ our %MODULES = (
     'Text::Markdown::Hoedown' => {
         class         => 'Text::Markdown::Hoedown::Markdown',
         markup_method => 'render',
-        args          => sub { [0, 16, Text::Markdown::Hoedown::Callbacks->html_renderer(0, 99)] },
+        args          => sub { [0, 16, Text::Markdown::Hoedown::Renderer::HTML->new(0, 99)] },
         deref         => 1,
     },
     'Text::Xatena'              => {markup_method => 'format'},
