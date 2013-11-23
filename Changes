@@ -2,6 +2,9 @@ Revision history for Perl extension Text::Markup::Any
 
 {{$NEXT}}
 
+0.04 2013-11-23T06:31:01Z
+        - follow up Text::Markdown::Hoedown 1.00
+
 0.03 2013-10-08T16:41:46Z
         - support Text::Markdown::Hoedown
 

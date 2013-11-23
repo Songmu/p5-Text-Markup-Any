@@ -6,7 +6,7 @@ recommends 'Text::Markdown::Hoedown', '1.00';
 
 suggests 'Text::Markdown::Discount';
 suggests 'Text::MultiMarkdown';
-suggests 'Text:Textile';
+suggests 'Text::Textile';
 suggests 'Text::Xatena';
 
 on configure => sub {

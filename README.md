@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Songmu/p5-Text-Markup-Any.png?branch=master)](https://travis-ci.org/Songmu/p5-Text-Markup-Any) [![Coverage Status](https://coveralls.io/repos/Songmu/p5-Text-Markup-Any/badge.png?branch=master)](https://coveralls.io/r/Songmu/p5-Text-Markup-Any?branch=master)
 # NAME
 
 Text::Markup::Any - Common Lightweight Markup Language Interface
@@ -17,8 +18,9 @@ Text::Markup::Any - Common Lightweight Markup Language Interface
 # DESCRIPTION
 
 Text::Markup::Any is Common Lightweight Markup Language Interface.
-Currently supported modules are Text::Markdown, Text::MultiMarkdown,
-Text::Markdown::Discount, Text::Xatena and Text::Textile.
+Currently supported modules are [Text::Markdown](http://search.cpan.org/perldoc?Text::Markdown), [Text::MultiMarkdown](http://search.cpan.org/perldoc?Text::MultiMarkdown),
+[Text::Markdown::Discount](http://search.cpan.org/perldoc?Text::Markdown::Discount), [Text::Markdown::GitHubAPI](http://search.cpan.org/perldoc?Text::Markdown::GitHubAPI),
+[Text::Markdown::Hoedown](http://search.cpan.org/perldoc?Text::Markdown::Hoedown), [Text::Xatena](http://search.cpan.org/perldoc?Text::Xatena) and [Text::Textile](http://search.cpan.org/perldoc?Text::Textile).
 
 # AUTHOR
 
